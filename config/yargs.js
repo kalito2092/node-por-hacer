@@ -20,6 +20,9 @@ const argv = require('yargs')
     .command('borrar', 'Borra la tarea que coincide con la descripcion introducida', {
         descripcion
     })
+    .command('listar', 'Lista las tareas cuyo estado coincida con el estado introducido', {
+        completado
+    })
     .help()
     .argv;
 

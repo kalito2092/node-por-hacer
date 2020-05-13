@@ -30,7 +30,7 @@ const crear = (descripcion) => {
 
     let porHacer = {
         descripcion,
-        completado: false
+        completado: "false"
     }
 
 
@@ -41,12 +41,17 @@ const crear = (descripcion) => {
 
 }
 
-const getListado = () => {
+const getListado = (completado) => {
     cargarDB();
-    return listadoPorHacer;
+
+    let listaFiltrada = listadoPorHacer.filter(tarea => {
+        return tarea.completado === completado;
+    })
+
+    return listaFiltrada;
 }
 
-const actualizar = (descripcion, completado = true) => {
+const actualizar = (descripcion, completado) => {
 
     cargarDB();
 
